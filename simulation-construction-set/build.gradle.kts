@@ -46,7 +46,7 @@ mainDependencies {
       exclude(group = "org.easytesting", module = "fest")
    }
 
-   api("us.ihmc:ihmc-yovariables:0.11.0")
+   api("us.ihmc:ihmc-yovariables:0.11.1")
    api("us.ihmc:ihmc-video-codecs:2.1.6")
    api("us.ihmc:euclid:0.21.0")
    api("us.ihmc:euclid-frame:0.21.0")
@@ -67,5 +67,5 @@ testDependencies {
 
 utilitiesDependencies {
    api("us.ihmc:euclid:0.21.0")
-   api("us.ihmc:ihmc-yovariables:0.11.0")
+   api("us.ihmc:ihmc-yovariables:0.11.1")
 }
