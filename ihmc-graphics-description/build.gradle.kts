@@ -19,7 +19,7 @@ mainDependencies {
    api("us.ihmc:euclid-shape:0.21.0")
    api("us.ihmc:ihmc-commons:0.32.0")
    api("us.ihmc:ihmc-yovariables:0.11.1")
-   api("us.ihmc:scs2-definition:17-0.23.0")
+   api("us.ihmc:scs2-definition:17-0.23.1")
 }
 
 testDependencies {
