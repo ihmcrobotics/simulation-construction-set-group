@@ -32,8 +32,8 @@ import us.ihmc.graphicsDescription.appearance.YoAppearanceMaterial;
 import us.ihmc.graphicsDescription.appearance.YoAppearanceRGBColor;
 import us.ihmc.graphicsDescription.appearance.YoAppearanceTexture;
 import us.ihmc.graphicsDescription.color.MutableColor;
+import us.ihmc.jMonkeyEngineToolkit.jme.util.ClassLoaderTools;
 import us.ihmc.jMonkeyEngineToolkit.jme.util.JMEDataTypeUtils;
-import us.ihmc.tools.ClassLoaderTools;
 
 public class JMEAppearanceMaterial
 {
