@@ -46,14 +46,14 @@ mainDependencies {
       exclude(group = "org.easytesting", module = "fest")
    }
 
-   api("us.ihmc:ihmc-yovariables:0.12.2")
+   api("us.ihmc:ihmc-yovariables:0.13.3")
    api("us.ihmc:ihmc-video-codecs:2.1.6")
-   api("us.ihmc:euclid:0.21.0")
-   api("us.ihmc:euclid-frame:0.21.0")
-   api("us.ihmc:euclid-shape:0.21.0")
-   api("us.ihmc:euclid-geometry:0.21.0")
-   api("us.ihmc:ihmc-commons:0.32.0")
-   api("us.ihmc:scs2-definition:17-0.27.0")
+   api("us.ihmc:euclid:0.22.2")
+   api("us.ihmc:euclid-frame:0.22.2")
+   api("us.ihmc:euclid-shape:0.22.2")
+   api("us.ihmc:euclid-geometry:0.22.2")
+   api("us.ihmc:ihmc-commons:0.34.0")
+   api("us.ihmc:scs2-definition:17-0.28.1")
 
    api("us.ihmc:ihmc-jmonkey-engine-toolkit:source")
    api("us.ihmc:ihmc-swing-plotting:source")
@@ -62,10 +62,10 @@ mainDependencies {
 }
 
 testDependencies {
-   api("us.ihmc:ihmc-commons-testing:0.32.0")
+   api("us.ihmc:ihmc-commons-testing:0.34.0")
 }
 
 utilitiesDependencies {
-   api("us.ihmc:euclid:0.21.0")
-   api("us.ihmc:ihmc-yovariables:0.12.2")
+   api("us.ihmc:euclid:0.22.2")
+   api("us.ihmc:ihmc-yovariables:0.13.3")
 }

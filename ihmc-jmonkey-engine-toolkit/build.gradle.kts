@@ -37,13 +37,13 @@ mainDependencies {
    api("com.vividsolutions:jts:1.13")
    api("com.google.guava:guava:18.0")
 
-   api("us.ihmc:euclid:0.21.0")
-   api("us.ihmc:euclid-shape:0.21.0")
-   api("us.ihmc:ihmc-commons:0.32.0")
+   api("us.ihmc:euclid:0.22.2")
+   api("us.ihmc:euclid-shape:0.22.2")
+   api("us.ihmc:ihmc-commons:0.34.0")
    
    api("us.ihmc:ihmc-graphics-description:source")
 }
 
 testDependencies {
-   api("us.ihmc:ihmc-commons-testing:0.32.0")
+   api("us.ihmc:ihmc-commons-testing:0.34.0")
 }
