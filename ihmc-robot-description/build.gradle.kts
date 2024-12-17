@@ -12,7 +12,7 @@ ihmc {
 mainDependencies {
    api("us.ihmc:euclid:0.22.2")
 
-   api("us.ihmc:ihmc-graphics-description:0.21.1")
+   api("us.ihmc:ihmc-graphics-description:0.26.0")
 }
 
 testDependencies {
