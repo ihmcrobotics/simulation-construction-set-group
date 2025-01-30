@@ -18,7 +18,7 @@ mainDependencies {
    api("us.ihmc:euclid-frame:0.21.0")
    api("us.ihmc:euclid-shape:0.21.0")
    api("us.ihmc:ihmc-commons:0.32.0")
-   api("us.ihmc:ihmc-yovariables:0.12.0")
+   api("us.ihmc:ihmc-yovariables:0.13.4")
    api("us.ihmc:scs2-definition:17-0.25.0")
 }
 
