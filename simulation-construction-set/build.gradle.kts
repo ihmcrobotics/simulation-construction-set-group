@@ -1,8 +1,6 @@
 plugins {
    id("us.ihmc.ihmc-build")
-   id("us.ihmc.ihmc-ci") version "8.3"
-   id("us.ihmc.ihmc-cd") version "1.26"
-   id("us.ihmc.log-tools-plugin") version "0.6.3"
+   id("us.ihmc.log-tools-plugin") version "0.6.4"
    id("us.ihmc.scs")
 }
 
@@ -48,12 +46,12 @@ mainDependencies {
 
    api("us.ihmc:ihmc-yovariables:0.13.4")
    api("us.ihmc:ihmc-video-codecs:2.1.6")
-   api("us.ihmc:euclid:0.21.0")
-   api("us.ihmc:euclid-frame:0.21.0")
-   api("us.ihmc:euclid-shape:0.21.0")
-   api("us.ihmc:euclid-geometry:0.21.0")
-   api("us.ihmc:ihmc-commons:0.32.0")
-   api("us.ihmc:scs2-definition:17-0.25.0")
+   api("us.ihmc:euclid:0.22.2")
+   api("us.ihmc:euclid-frame:0.22.2")
+   api("us.ihmc:euclid-shape:0.22.2")
+   api("us.ihmc:euclid-geometry:0.22.2")
+   api("us.ihmc:ihmc-commons:0.34.0")
+   api("us.ihmc:scs2-definition:17-0.28.2")
 
    api("us.ihmc:ihmc-jmonkey-engine-toolkit:source")
    api("us.ihmc:ihmc-swing-plotting:source")
@@ -62,10 +60,10 @@ mainDependencies {
 }
 
 testDependencies {
-   api("us.ihmc:ihmc-commons-testing:0.32.0")
+   api("us.ihmc:ihmc-commons-testing:0.34.0")
 }
 
 utilitiesDependencies {
-   api("us.ihmc:euclid:0.21.0")
+   api("us.ihmc:euclid:0.22.2")
    api("us.ihmc:ihmc-yovariables:0.13.4")
 }

@@ -1,7 +1,5 @@
 plugins {
    id("us.ihmc.ihmc-build")
-   id("us.ihmc.ihmc-ci") version "8.3"
-   id("us.ihmc.ihmc-cd") version "1.26"
 }
 
 ihmc {
@@ -16,14 +14,14 @@ mainDependencies {
    api("org.jfree:jfreechart:1.0.19")
    api("org.jfree:jcommon:1.0.24")
 
-   api("us.ihmc:euclid:0.21.0")
-   api("us.ihmc:ihmc-commons:0.32.0")
+   api("us.ihmc:euclid:0.22.2")
+   api("us.ihmc:ihmc-commons:0.34.0")
 
-   api("us.ihmc:ihmc-graphics-description:source")
+   api("us.ihmc:ihmc-graphics-description:0.26.0")
 }
 
 testDependencies {
-   api("us.ihmc:ihmc-commons-testing:0.32.0")
+   api("us.ihmc:ihmc-commons-testing:0.34.0")
 
-   api("us.ihmc:ihmc-graphics-description-test:source")
+   api("us.ihmc:ihmc-graphics-description-test:0.26.0")
 }
