@@ -46,10 +46,10 @@ mainDependencies {
 
    api("us.ihmc:ihmc-yovariables:0.13.5")
    api("us.ihmc:ihmc-video-codecs:2.1.6")
-   api("us.ihmc:euclid:0.22.2")
-   api("us.ihmc:euclid-frame:0.22.2")
-   api("us.ihmc:euclid-shape:0.22.2")
-   api("us.ihmc:euclid-geometry:0.22.2")
+   api("us.ihmc:euclid:0.22.3")
+   api("us.ihmc:euclid-frame:0.22.3")
+   api("us.ihmc:euclid-shape:0.22.3")
+   api("us.ihmc:euclid-geometry:0.22.3")
    api("us.ihmc:ihmc-commons:0.35.1")
    api("us.ihmc:scs2-definition:17-0.28.2")
 
@@ -64,6 +64,6 @@ testDependencies {
 }
 
 utilitiesDependencies {
-   api("us.ihmc:euclid:0.22.2")
+   api("us.ihmc:euclid:0.22.3")
    api("us.ihmc:ihmc-yovariables:0.13.5")
 }
