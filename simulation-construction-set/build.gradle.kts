@@ -51,7 +51,7 @@ mainDependencies {
    api("us.ihmc:euclid-shape:0.22.5")
    api("us.ihmc:euclid-geometry:0.22.5")
    api("us.ihmc:ihmc-commons:0.35.1")
-   api("us.ihmc:scs2-definition:17-0.29.0")
+   api("us.ihmc:scs2-definition:17-0.30.0")
 
    api("us.ihmc:ihmc-jmonkey-engine-toolkit:source")
    api("us.ihmc:ihmc-swing-plotting:source")
