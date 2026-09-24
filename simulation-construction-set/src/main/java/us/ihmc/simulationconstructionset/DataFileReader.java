@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
 import java.util.zip.GZIPInputStream;
@@ -354,12 +355,16 @@ public class DataFileReader
 
          //       System.out.println("varNames.get(i) = " + varNames.get(i) + ", newEntry = " + newEntry);
 
+         double[] values = new double[nPoints];
+
          for (int j = 0; j < nPoints; j++)
          {
-            newEntry.writeBufferAt(dataStream.readFloat(), j);
+            values[j] = dataStream.readFloat();
 
             // System.out.print(dataStream.readFloat() + "  ");
          }
+
+         newEntry.loadBuffer(values, 0);
 
          // System.out.println(varNames.get(i));
          // dataHolder.addData((String) varNames.get(i),someData);
@@ -414,6 +419,11 @@ public class DataFileReader
          entries[i] = getDataBufferEntry(varNames.get(i), dataBuffer, rootRegistryToAddNewVariablesTo, newVars);
       }
 
+      // The data is stored row by row, so accumulate each variable's column and load it into the buffer once reading is done.
+      double[][] columns = new double[nVars][dataBuffer.getBufferSize()];
+      // Number of variables read in the current row, used to also load a partially read last row.
+      int varsReadInRow = 0;
+
       int j = 0;
       try
       {
@@ -432,20 +442,24 @@ public class DataFileReader
                int newBufferSize = Math.min(j, Integer.MAX_VALUE / 2);
                newBufferSize *= 2;
                dataBuffer.resizeBuffer(newBufferSize);
+
+               for (int i = 0; i < nVars; i++)
+                  columns[i] = Arrays.copyOf(columns[i], newBufferSize);
             }
 
-            for (int i = 0; i < nVars; i++)
+            for (varsReadInRow = 0; varsReadInRow < nVars; varsReadInRow++)
             {
                double someData = (dataStream.readFloat());
 
                // System.out.print(someData);
-               YoBufferVariableEntry entry = entries[i];
-               entry.writeBufferAt(someData, j);
+               columns[varsReadInRow][j] = someData;
             }
 
             // System.out.println();
 
          }
+
+         varsReadInRow = 0;
       }
       catch (IOException iOException)
       {
@@ -456,6 +470,12 @@ public class DataFileReader
 
          if (nPoints == -1)
             nPoints = j;
+      }
+
+      for (int i = 0; i < nVars; i++)
+      {
+         int length = i < varsReadInRow ? j + 1 : j;
+         entries[i].loadBuffer(columns[i], 0, 0, length);
       }
 
       //    for (int i=0; i<nVars; i++)
@@ -527,6 +547,7 @@ public class DataFileReader
             if (!valString.startsWith("["))
                return -1;
 
+            double[] values = new double[nPoints];
             int point = 0;
             valString = valString.substring(1);
 
@@ -535,7 +556,7 @@ public class DataFileReader
                double value = Double.parseDouble(valString);
 
                // System.out.print(value + " ");
-               newEntry.writeBufferAt(value, point);
+               values[point] = value;
                point++;
 
                if (!token.hasMoreTokens())
@@ -545,6 +566,8 @@ public class DataFileReader
 
             if (nPoints != point)
                return -1;
+
+            newEntry.loadBuffer(values, 0);
 
             // System.out.println();
          }
@@ -641,10 +664,14 @@ public class DataFileReader
 
          YoBufferVariableEntry newEntry = getDataBufferEntry(varName, dataBuffer, rootRegistryToAddNewVariablesTo, newVars);
 
+         double[] values = new double[nPoints];
+
          for (int j = 0; j < nPoints; j++)
          {
-            newEntry.writeBufferAt((dataArrays.get(j))[i], j);
+            values[j] = (dataArrays.get(j))[i];
          }
+
+         newEntry.loadBuffer(values, 0);
       }
 
       dataStream.close();
